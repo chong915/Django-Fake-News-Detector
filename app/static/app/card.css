@@ -13,7 +13,7 @@
 .news-card-body {
 	display: grid;
 	min-height: 30vh;
-	place-items: center;
+	place-items: left;
 	line-height: 1.6;
 	/*background: var(--clr-neutral-900);*/
 	font-family: sans-serif;
