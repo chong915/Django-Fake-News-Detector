@@ -7,9 +7,9 @@
             <div class="container-fluid">
                 <div class="row">
                     {% if article_data %}
-                    <div class="col-6 col-sm-6 col-md-12 col-lg-12 col-xl-6 ml-0">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 ml-0">
                         <footer class="news-card-body" style="padding-top: 0">
-                            <div class="news-card" style="background-image: url({{ article_data.top_image }});min-width: 70ch;">
+                            <div class="news-card" style="background-image: url({{ article_data.top_image }});">
                                 <div class="news-card-content">
                                     <h3 class="news-card-title" style="text-align: left;">{{ article_data.title }}</h3>
                                     <p class="news-card-body">{{ article_data.summary }}</p>
@@ -19,7 +19,7 @@
                         </footer>
                     </div>
 
-                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 mr-auto" style="padding-top: 3rem; margin-right: 0;">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-5 mr-auto" style="padding-top: 3rem; margin-right: 0;">
                         <div class="card text-white bg-secondary mb-3">
                             <div class="card-body">
                                 <div class="table-responsive">
