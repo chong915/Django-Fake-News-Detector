@@ -33,7 +33,10 @@ def article(request):
 
 		title = article.title
 		authors = article.authors
-		publish_date = article.publish_date.strftime("%Y-%m-%d")
+		if article.publish_date is None:
+			publish_date = ""
+		else:
+			publish_date = article.publish_date.strftime("%Y-%m-%d")
 		text = article.text
 		
 		summary = article.summary
