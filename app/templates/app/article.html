@@ -13,7 +13,7 @@
                                 <div class="news-card-content">
                                     <h3 class="news-card-title" style="text-align: left;">{{ article_data.title }}</h3>
                                     <p class="news-card-body">{{ article_data.summary }}</p>
-                                    <a href="{{ article_data.url }}" target="_blank" class="button">Learn More</a>
+                                        <a href="{{ article_data.url }}" target="_blank" class="button" style="background-color: {{ article_data.color  }};">Learn More</a>
                                 </div>
                             </div>
                         </footer>
@@ -84,7 +84,11 @@
                 </div>
             </div>
             <div>
-                <a href="{% url 'app-home'%}"><button class="btn btn-success btn-lg" type="submit" id="refresh-btn">Return to HomePage</button></a>
+                {% if article_data.color = '#3df581' %}
+                    <a href="{% url 'app-home'%}"><button class="btn btn-success btn-lg" type="submit" id="refresh-btn">Return to HomePage</button></a>
+                {% else %}
+                    <a href="{% url 'app-home'%}"><button class="btn btn-danger btn-lg" type="submit" id="refresh-btn">Return to HomePage</button></a>
+                {% endif %}
             </div>
         </section>
     </main>
