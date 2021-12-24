@@ -8,3 +8,4 @@ requests==2.19.1
 urllib3==1.23
 newsapi-python==0.2.6
 newspaper3k==0.2.8
+scikit-learn==0.23.2
