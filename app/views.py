@@ -10,9 +10,9 @@ def about(request):
 	return render(request, 'app/about.html', {'title': 'About'})
 
 def article(request):
-	if request.method == "POST":
+	if request.method == "GET":
 		try:
-			article_url = request.POST["article-url"]
+			article_url = request.GET["article-url"]
 			article = Article(article_url)
 			article.download()
 			article.parse()
