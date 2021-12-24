@@ -23,9 +23,11 @@ def article(request):
 			print(f"URL : {article_url}")
 			article = Article(article_url)
 			article.download()
+			print("Article Downloaded")
 			article.parse()
 			article.nlp()
 		except:
+			print("Error 404 !")
 			return HttpResponse(status=404)
 
 		title = article.title
