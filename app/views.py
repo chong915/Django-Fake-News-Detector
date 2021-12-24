@@ -13,13 +13,12 @@ def article(request):
 	if request.method == "POST":
 		try:
 			article_url = request.POST["article-url"]
-			print(f"Article URL : {article_url}")
 			article = Article(article_url)
 			article.download()
 			article.parse()
 			article.nlp()
 		except:
-			return HttpResponse(status=500)
+			return HttpResponse(status=404)
 
 		title = article.title
 		authors = article.authors
