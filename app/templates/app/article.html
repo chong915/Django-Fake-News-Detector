@@ -1,5 +1,10 @@
 {% extends 'app/base.html' %}
 
+<style type="text/css">
+    news-card-title::after {
+        background: {{ article_data.color  }};
+    }
+</style>
 {% block content %}
     <main role="main">
         <section class="jumbotron text-center text-white">

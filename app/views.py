@@ -54,7 +54,7 @@ def article(request):
 		if fake_prob > 50.0:
 			color = "#d9534f"
 		else:
-			color = hsl(142, 90%, 61%)
+			color = '#3df581'
 		article_data = {'title': title, 'authors': authors, 'url': article_url, 'publish_date': publish_date,
 						'text': text, 'summary': summary, 'keywords': keywords,'top_image': top_image,
 						'real_prob': real_prob, 'fake_prob': fake_prob, 'color': color}
