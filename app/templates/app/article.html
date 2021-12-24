@@ -84,7 +84,7 @@
                 </div>
             </div>
             <div>
-                {% if article_data.color = '#3df581' %}
+                {% if article_data.color == '#3df581' %}
                     <a href="{% url 'app-home'%}"><button class="btn btn-success btn-lg" type="submit" id="refresh-btn">Return to HomePage</button></a>
                 {% else %}
                     <a href="{% url 'app-home'%}"><button class="btn btn-danger btn-lg" type="submit" id="refresh-btn">Return to HomePage</button></a>
