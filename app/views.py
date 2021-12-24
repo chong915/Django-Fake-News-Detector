@@ -51,8 +51,11 @@ def article(request):
 		y_pred = random_forest.predict_proba(x)[0]
 		real_prob = round(y_pred[0] * 100, 2)
 		fake_prob = round(y_pred[1] * 100, 2)
-
+		if fake_prob > 50.0:
+			color = "#d9534f"
+		else:
+			color = hsl(142, 90%, 61%)
 		article_data = {'title': title, 'authors': authors, 'url': article_url, 'publish_date': publish_date,
 						'text': text, 'summary': summary, 'keywords': keywords,'top_image': top_image,
-						'real_prob': real_prob, 'fake_prob': fake_prob}
+						'real_prob': real_prob, 'fake_prob': fake_prob, 'color': color}
 		return render(request, 'app/article.html', {'article_data': article_data})
