@@ -3,6 +3,8 @@ from django.urls import reverse
 from newsapi import NewsApiClient
 from newspaper import Article
 import pickle
+import nltk
+nltk.download('punkt')
 
 # Create your views here.
 
