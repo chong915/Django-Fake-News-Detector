@@ -49,5 +49,4 @@ def article(request):
 		article_data = {'title': title, 'authors': authors, 'url': article_url, 'publish_date': publish_date,
 						'text': text, 'summary': summary, 'keywords': keywords,'top_image': top_image,
 						'real_prob': real_prob, 'fake_prob': fake_prob}
-		request.session['article_data'] = article_data
 		return render(request, 'app/article.html', {'article_data': article_data})
