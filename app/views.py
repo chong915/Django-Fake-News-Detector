@@ -5,20 +5,6 @@ from newspaper import Article
 import pickle
 
 # Create your views here.
-posts = [
-	{
-		'author': 'CoreyMS',
-		'title': 'Blog Post 1',
-		'content': 'First post content',
-		'date_posted': 'August 27, 2018'
-	},
-	{
-		'author': 'Jane Doe',
-		'title': 'Blog Post 2',
-		'content': 'Second post content',
-		'date_posted': 'August 28, 2018'
-	}
-]
 
 def about(request):
 	return render(request, 'app/about.html', {'title': 'About'})
@@ -33,7 +19,7 @@ def article(request):
 			article.parse()
 			article.nlp()
 		except:
-			return HttpResponse(status=404)
+			return HttpResponse(status=500)
 
 		title = article.title
 		authors = article.authors
