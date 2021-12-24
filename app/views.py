@@ -9,8 +9,15 @@ import pickle
 def about(request):
 	return render(request, 'app/about.html', {'title': 'About'})
 
+def home(request):
+	newsapi = NewsApiClient(api_key='f8c00901885e40e9ab6c9223d5e4b9eb')
+	all_articles = newsapi.get_top_headlines(q="covid", country="my",
+                                     language='en',
+                                     page=1, page_size=6)
+	return render(request, 'app/home.html', {'articles': all_articles['articles']})
+
 def article(request):
-	if request.method == "GET":
+	if request.method == "POST":
 		try:
 			article_url = request.GET["article-url"]
 			print(f"URL : {article_url}")
@@ -44,12 +51,3 @@ def article(request):
 						'real_prob': real_prob, 'fake_prob': fake_prob}
 		request.session['article_data'] = article_data
 		return render(request, 'app/article.html', {'article_data': article_data})
-
-def home(request):
-	newsapi = NewsApiClient(api_key='f8c00901885e40e9ab6c9223d5e4b9eb')
-	all_articles = newsapi.get_top_headlines(q="covid", country="my",
-                                     language='en',
-                                     page=1, page_size=6)
-	return render(request, 'app/home.html', {'articles': all_articles['articles']})
-
-	
