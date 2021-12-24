@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="django-newsfeed app demo" />
+    <meta name="author" content="Maksudul Haque" />
+    <title>
+        {% block head_title %}django-newsfeed demo{% endblock %}
+    </title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'app/card.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'app/style.css' %}" rel="stylesheet" type="text/css"/>
+    <link href="{% static 'app/table_card.css' %}" rel="stylesheet" type="text/css"/>
+
+    {% block head_extra %}{% endblock %}
+</head>
+<body>
+    {% block body %}
+        {% include 'app/navbar.html' %}
+        {% block content %}
+            <!-- Add content here -->
+        {% endblock %}
+        <!--
+        {% block footer %}
+            {% include 'app/footer.html' %}
+        {% endblock %}
+        -->
+    {% endblock %}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--script type="text/javascript" src="{% static 'app/refresh.js' %}"></script-->
+</body>
+{% block news_body %}{% endblock %}
+</html>

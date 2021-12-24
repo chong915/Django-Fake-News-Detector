@@ -1,0 +1,90 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <main role="main">
+        <section class="jumbotron text-center text-white">
+            <div class="container-fluid">
+                <div class="row">
+                    {% if article_data %}
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 ml-auto">
+                        <footer class="news-card-body" style="padding-top: 0">
+                            <div class="news-card" style="background-image: url({{ article_data.top_image }});min-width: 70ch;">
+                                <div class="news-card-content">
+                                    <h3 class="news-card-title" style="text-align: left;">{{ article_data.title }}</h3>
+                                    <p class="news-card-body">{{ article_data.summary }}</p>
+                                    <a href="{{ article_data.url }}" target="_blank" class="button">Learn More</a>
+                                </div>
+                            </div>
+                        </footer>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-6 mr-auto" style="padding-top: 3rem; margin-right: 0;">
+                        <div class="card text-white bg-secondary mb-3">
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            <tr>
+                                                <td><h5> Title </h5></td>
+                                                <td> {{ article_data.title }} </td>
+                                            </tr>
+                                            <tr>
+                                                <td><h5> Date </h5></td>
+                                                <td> {{ article_data.publish_date }} </td>
+                                            </tr>
+                                            <tr>
+                                                <td><h5> Authors </h5></td>
+                                                <td>
+                                                    <div style="line-height: 1.6;">
+                                                    {% for author in article_data.authors %}
+                                                        <span class="badge badge-pill badge-info" style="margin-bottom: 5px;">
+                                                            {{ author }}
+                                                        </span>
+                                                    {% endfor %}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><h5> Keywords </h5></td>
+                                                <td>
+                                                    <div style="line-height: 1.6;">
+                                                    {% for keyword in  article_data.keywords  %}
+                                                        <span class="badge badge-pill badge-info" style="margin-bottom: 5px;">
+                                                            {{ keyword }}
+                                                        </span>
+                                                    {% endfor %}
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><h5> Fake({{ article_data.fake_prob }}%) </h5></td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-danger" role="progressbar" style="width: {{ article_data.fake_prob }}%" aria-valuenow="{{ article_data.fake_prob }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><h5> Real({{ article_data.real_prob }}%) </h5></td>
+                                                <td>
+                                                    <div class="progress">
+                                                        <div class="progress-bar bg-success" role="progressbar" style="width: {{ article_data.real_prob }}%" aria-valuenow="{{ article_data.real_prob }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div>
+                <a href="{% url 'app-home'%}"><button class="btn btn-success btn-lg" type="submit" id="refresh-btn">Return to HomePage</button></a>
+            </div>
+        </section>
+    </main>
+{% endblock %}

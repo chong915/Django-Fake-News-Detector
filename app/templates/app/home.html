@@ -1,0 +1,55 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <main role="main">
+        <section class="jumbotron text-center text-white">
+            <div class="container">
+                <h1>Django Fake News Detector</h1>
+                <p class="lead text-muted border-bottom border-dark pb-2 mb-0">
+                    This is a Demo app to showcase django-fake-news-detector<br>
+                    <a class="text-white" href="https://github.com/saadmk11/django-newsfeed">Learn more</a>
+                </p>
+                <hr />
+                <form method="post" class="articleForm" action="{% url 'app-article' %}">
+                    <div class="input-group input-group-lg">
+                        {% csrf_token %}
+                        <input name="article-url" class="form-control" placeholder="News Article URL" aria-label="News Article URL" />
+                        <div class="input-group-append">
+                            <button class="btn btn-primary btn-lg" type="submit">Analyze</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <a href="{% url 'app-home'%}"><button class="btn btn-success btn-lg mt-5" type="submit" id="refresh-btn">Refresh COVID-19 News Today</button></a>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}
+{% if articles %}
+<div class="my-card">
+    {% block news_body %}
+    <div class="container">
+        <div class="row">
+        {% for article in articles %}
+            {% if article.urlToImage != None %}
+            <div class="col-12 col-md-6">
+                <footer class="news-card-body">
+                    <div class="news-card" style="background-image: url({{ article.urlToImage }});">
+                        <div class="news-card-content">
+                            <h3 class="news-card-title">{{ article.title }}</h3>
+                            <p class="news-card-body">{{ article.description }}</p>
+                            <a href="{{ article.url }}" target="_blank" class="button">Learn More</a>
+                        </div>
+                    </div>
+                    
+                </footer>
+            </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+    </div>
+    {% endblock %}
+{% endif %}
+</div>
