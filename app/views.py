@@ -20,13 +20,16 @@ def home(request):
 
 def article(request):
 	if request.method == "POST":
-		article_url = request.POST["article-url"]
-		print(f"URL : {article_url}")
-		article = Article(article_url)
-		article.download()
-		print("Article Downloaded")
-		article.parse()
-		article.nlp()
+		try:
+			article_url = request.POST["article-url"]
+			print(f"URL : {article_url}")
+			article = Article(article_url)
+			article.download()
+			print("Article Downloaded")
+			article.parse()
+			article.nlp()
+		except:
+			return HttpResponse(status=404)
 
 		title = article.title
 		authors = article.authors
