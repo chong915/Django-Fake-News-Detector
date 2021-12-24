@@ -13,6 +13,7 @@ def article(request):
 	if request.method == "GET":
 		try:
 			article_url = request.GET["article-url"]
+			print(f"URL : {article_url}")
 			article = Article(article_url)
 			article.download()
 			article.parse()
