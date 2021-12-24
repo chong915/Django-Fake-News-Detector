@@ -19,7 +19,7 @@ def home(request):
 def article(request):
 	if request.method == "POST":
 		try:
-			article_url = request.GET["article-url"]
+			article_url = request.POST["article-url"]
 			print(f"URL : {article_url}")
 			article = Article(article_url)
 			article.download()
