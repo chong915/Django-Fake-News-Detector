@@ -32,8 +32,7 @@ ALLOWED_HOSTS = ['fake-news-app-project.herokuapp.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
-    'app.views.home',
-    'app.views.article',
+    'app',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
