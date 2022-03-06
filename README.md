@@ -1,7 +1,7 @@
 # Django-Fake-News-Detector
 An Django Fake News Detector Website (Final Semester Project - 3 credit hours)
 
-**This project was also documented in the form of journal paper**
+## My journal paper
 
 Link: https://github.com/chong915/Django-Fake-News-Detector/blob/ca6803c104b3bc2f8d74560ebf389ac06076837a/data_science_journal_paper.pdf
 
