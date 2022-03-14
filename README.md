@@ -1,5 +1,5 @@
 # Django-Fake-News-Detector
-An Django Fake News Detector Website (Final Semester Project - 3 credit hours)
+An Django Fake News Detector Website (Data Science Project - 3 credit hours)
 
 ## My journal paper
 
