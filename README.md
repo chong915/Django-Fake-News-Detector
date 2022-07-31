@@ -5,6 +5,10 @@ An Django Fake News Detector Website (Data Science Project - 3 credit hours)
 
 Link: https://github.com/chong915/Django-Fake-News-Detector/blob/ca6803c104b3bc2f8d74560ebf389ac06076837a/data_science_journal_paper.pdf
 
+## Presentation Slides
+
+Link: https://docs.google.com/presentation/d/1uAMUyvbwfEXGxpN6E-qmgspws5joXu7KifSawSIqqHc/edit?usp=sharing
+
 # Data Science Project Documentation
 ## Introduction
 
