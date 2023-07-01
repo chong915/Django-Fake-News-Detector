@@ -13,7 +13,7 @@ def about(request):
 
 def home(request):
 	newsapi = NewsApiClient(api_key='f8c00901885e40e9ab6c9223d5e4b9eb')
-	all_articles = newsapi.get_top_headlines(q="covid", country="my",
+	all_articles = newsapi.get_top_headlines(q="health", country="my",
                                      language='en',
                                      page=1, page_size=10)
 	return render(request, 'app/home.html', {'articles': all_articles['articles']})
@@ -47,6 +47,7 @@ def article(request):
 		tfidf_vectorizer = pickle.load(open('app/tfidf_vectorizer.pkl', 'rb'))
 		random_forest = pickle.load(open('app/random_forest.pkl', 'rb'))
 
+		print('Text :', text)
 		x = tfidf_vectorizer.transform([text])
 		y_pred = random_forest.predict_proba(x)[0]
 		real_prob = round(y_pred[0] * 100, 2)
