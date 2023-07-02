@@ -12,7 +12,7 @@ Link: https://docs.google.com/presentation/d/1uAMUyvbwfEXGxpN6E-qmgspws5joXu7Kif
 # Data Science Project Documentation
 ## Introduction
 
-Link : [https://fake-news-app-project.herokuapp.com/](https://fake-news-app-project.herokuapp.com/)
+Link : [https://web-production-8705.up.railway.app/](https://web-production-8705.up.railway.app/)
 
 This website is targeted at the general public in Malaysia. It acts as a third party fact-checking website for Malaysians to check the credibility and trustworthiness of online news. This website an open-source Python library called NewsAPIClient to get the latest and current Covid-19 news in Malaysia and all these news fetched will get displayed in the dashboard of my homepage. Not only that, the other main function of my website is to help people to detect fake news. So, there’s a text field box in the homepage that lets users to enter the news article URL to analyze that particular news article.
 
