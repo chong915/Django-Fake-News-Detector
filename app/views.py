@@ -13,7 +13,7 @@ def about(request):
 
 def home(request):
 	newsapi = NewsApiClient(api_key='f8c00901885e40e9ab6c9223d5e4b9eb')
-	all_articles = newsapi.get_top_headlines(q="health", country="my",
+	all_articles = newsapi.get_top_headlines(q="covid",
                                      language='en',
                                      page=1, page_size=10)
 	return render(request, 'app/home.html', {'articles': all_articles['articles']})
